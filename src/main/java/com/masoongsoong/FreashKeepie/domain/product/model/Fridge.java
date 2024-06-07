@@ -17,7 +17,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
 @Table(name = "fridge")
-
 @Getter
 @Entity
 @Schema(name = "냉장고 정보", description = "냉장고 정보를 담기 위한 객체")

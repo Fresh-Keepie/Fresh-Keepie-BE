@@ -5,14 +5,7 @@ import com.masoongsoong.FreashKeepie.domain.product.model.dto.IngredientsDto;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 
 @Table(name = "ingredients")
@@ -27,11 +20,11 @@ public class Ingredients {
     @Schema(title = "유통 기한")
     @Column(nullable = true)
     String expiration_date;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @Schema(title = "냉장고 정보 - FK")
     @JoinColumn(nullable = false , name = "fridgeId")
     private Fridge fridge;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @Schema(title = "재료 상세 정보 - FK")
     @JoinColumn(nullable = false , name = "ingredientsDetailId")
     private IngredientsDetail ingredientsdetail;
@@ -45,11 +38,11 @@ public class Ingredients {
         this.ingredientsdetail = ingredientsdetail;
     }
 
-    public Ingredients(IngredientsDto ingredientsDto) {
+    public Ingredients(IngredientsDto ingredientsDto, Fridge fridge, IngredientsDetail ingredientsDetail) {
         this.id = ingredientsDto.getId();
         this.expiration_date = ingredientsDto.getExpiration_date();
-        this.fridge = new Fridge(ingredientsDto.getFridgeId());
-        this.ingredientsdetail = new IngredientsDetail(ingredientsDto.getIngredientsDetailId());
+        this.fridge = fridge;
+        this.ingredientsdetail = ingredientsDetail;
     }
 
     public int getId() {

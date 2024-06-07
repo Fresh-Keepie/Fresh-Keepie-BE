@@ -1,48 +1,51 @@
 package com.masoongsoong.FreashKeepie.domain.product.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
+import com.masoongsoong.FreashKeepie.domain.product.model.dto.IngredientsDetailDto;
+import com.masoongsoong.FreashKeepie.domain.product.model.dto.IngredientsDto;
+import jakarta.persistence.*;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
 @Table(name = "ingredientsDetail")
+@Getter
 @Entity
 @Schema(name = "재료 상세 정보", description = "재료의 상세 정보 저장 Entity")
 public class IngredientsDetail {
-    @Getter
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(title = "고유 ID - PK")
     int id;
-    @Getter
+
     @Schema(title = "재료 이름")
     @Column(nullable = false, length = 20)
-    String product_name;
+    String productName;
 
     @Schema(title = "재료양")
     @Column(nullable = false, length = 20)
     Integer amount;
 
+    @ManyToOne
+    @Schema(title = "fridge fk")
+    @JoinColumn(nullable = false , name = "userId")
+    User user;
+
     protected IngredientsDetail() {
     }
 
-    public IngredientsDetail(int id) {
-        this.id = id;
-    }
 
-    public int getAmount() {
-        return amount;
+    public IngredientsDetail(User user, String productName, Integer amount) {
+        this.user = user;
+        this.productName = productName;
+        this.amount = amount;
     }
-
 
     @Override
     public String toString() {
-        return "IngredientsDetail [id=" + id + ", name=" + product_name + ", amount=" + amount+  "]";
+        return "IngredientsDetail [id=" + id + ", name=" + productName + ", amount=" + amount+  "]";
     }
+
 
 }

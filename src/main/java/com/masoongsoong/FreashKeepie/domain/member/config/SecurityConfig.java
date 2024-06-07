@@ -28,10 +28,10 @@ public class SecurityConfig {
                         .permitAll()
                 )
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-                        .requestMatchers("/user/signup", "/user/login","/product/","/product/fridge").permitAll()
-                        .anyRequest().authenticated()) // 다른 모든 요청은 인증 필요
+                        .requestMatchers("/user/signup", "/user/login", "/product/fridge/**", "/ingredient/create", "/product", "/fridge/**","product/list/{fridgeId}","/product/{userId}/{ingredientsId}", "/ingredient/update/{userId}/{ingredientsDetailId}").permitAll()
+                        .anyRequest().permitAll()) // 다른 모든 요청은 인증 필요
                 .csrf((csrf) -> csrf
-                        .ignoringRequestMatchers("/h2-console/**","/user/signup", "/user/login","/product/","/product/fridge")) // /h2-console 경로에 대해 CSRF 보호 비활성화
+                        .ignoringRequestMatchers("/h2-console/**", "/user/signup", "/user/login", "/product/**", "/product/fridge", "/ingredient/create","/product",  "/fridge/list","/product/list","product/list/{fridgeId}","/product/{userId}/{ingredientsId}", "/update/{userId}/{ingredientsDetailId}", "/ingredient/update/{userId}/{ingredientsDetailId}")) // /h2-console 경로에 대해 CSRF 보호 비활성화
                 .headers(
                         headersConfigurer ->
                                 headersConfigurer
@@ -46,9 +46,6 @@ public class SecurityConfig {
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-
-
 }
 
 

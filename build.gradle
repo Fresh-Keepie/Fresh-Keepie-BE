@@ -41,6 +41,9 @@ dependencies {
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.1.0.M1'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+	
 	testImplementation 'org.springframework.security:spring-security-test'
 
 	// https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients

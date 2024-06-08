@@ -1,6 +1,10 @@
 package com.masoongsoong.FreashKeepie.domain.member.service;
 
+
+import com.masoongsoong.FreashKeepie.domain.member.User;
+
 import com.masoongsoong.FreashKeepie.domain.member.model.*;
+
 import com.masoongsoong.FreashKeepie.domain.member.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -21,6 +25,7 @@ public class UserService {
         if (userRepository.existsByUserId(userId)) {
             throw new DataIntegrityViolationException("Username already exists");
         }
+
         if (userRepository.existsByEmail(email)) {
             throw new DataIntegrityViolationException("Email already exists");
         }
@@ -60,10 +65,4 @@ public class UserService {
         return optionalUser.get();
     }
 
-
 }
-
-
-
-
-

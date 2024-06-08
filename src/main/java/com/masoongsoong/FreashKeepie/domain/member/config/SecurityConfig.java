@@ -42,7 +42,10 @@ public class SecurityConfig{
                 )
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
                         .requestMatchers("/resources/**","/mypage/**", "/board/**","/user/signup", "/user/login","/product/","/product/fridge").permitAll()
-                        .anyRequest().authenticated()) // 다른 모든 요청은 인증 필요
+                        .anyRequest().permitAll()) // 다른 모든 요청은 인증 필요
+                //        .anyRequest().authenticated()) // 다른 모든 요청은 인증 필요
+
+
                 // .csrf((csrf) -> csrf
                 //         .ignoringRequestMatchers("/h2-console/**","/board/**","/user/signup", "/user/login","/product/","/product/fridge")) // /h2-console 경로에 대해 CSRF 보호 비활성화
                 .headers(

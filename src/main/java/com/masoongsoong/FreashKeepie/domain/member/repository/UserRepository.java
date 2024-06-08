@@ -1,6 +1,6 @@
 package com.masoongsoong.FreashKeepie.domain.member.repository;
 
-import com.masoongsoong.FreashKeepie.domain.member.User;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import jakarta.persistence.Id;
 import org.springframework.data.jpa.repository.JpaRepository;
 

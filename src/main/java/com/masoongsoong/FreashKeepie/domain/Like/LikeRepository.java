@@ -1,9 +1,8 @@
 package com.masoongsoong.FreashKeepie.domain.Like;
 
-import com.masoongsoong.FreashKeepie.domain.member.User;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
 

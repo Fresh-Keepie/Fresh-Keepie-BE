@@ -1,4 +1,4 @@
-package com.masoongsoong.FreashKeepie.domain.member;
+package com.masoongsoong.FreashKeepie.domain.member.model;
 
 import com.masoongsoong.FreashKeepie.domain.Comment.Comment;
 import com.masoongsoong.FreashKeepie.domain.Like.Like;

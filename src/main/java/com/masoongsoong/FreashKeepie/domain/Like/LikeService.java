@@ -1,6 +1,6 @@
 package com.masoongsoong.FreashKeepie.domain.Like;
 
-import com.masoongsoong.FreashKeepie.domain.member.User;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import com.masoongsoong.FreashKeepie.domain.member.repository.UserRepository;
 import com.masoongsoong.FreashKeepie.domain.Post.Post;
 import com.masoongsoong.FreashKeepie.domain.Post.PostRepository;

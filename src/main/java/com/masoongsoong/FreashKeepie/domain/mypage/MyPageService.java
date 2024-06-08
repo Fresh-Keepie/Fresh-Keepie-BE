@@ -9,7 +9,7 @@ import com.masoongsoong.FreashKeepie.domain.Post.PostRepository;
 import com.masoongsoong.FreashKeepie.domain.Scrap.ScrapRepository;
 import com.masoongsoong.FreashKeepie.domain.Scrap.ScrapService;
 import com.masoongsoong.FreashKeepie.domain.member.MemberDTO;
-import com.masoongsoong.FreashKeepie.domain.member.User;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import com.masoongsoong.FreashKeepie.domain.member.repository.UserRepository;
 import com.masoongsoong.FreashKeepie.domain.member.UserDto;
 import lombok.RequiredArgsConstructor;

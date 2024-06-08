@@ -1,24 +1,12 @@
 package com.masoongsoong.FreashKeepie.domain.Post;
 
-import com.masoongsoong.FreashKeepie.domain.Comment.CommentCreateRequest;
 import com.masoongsoong.FreashKeepie.domain.Comment.CommentService;
-import com.masoongsoong.FreashKeepie.domain.Like.LikeService;
-import com.masoongsoong.FreashKeepie.domain.Scrap.ScrapService;
-import com.masoongsoong.FreashKeepie.domain.member.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor

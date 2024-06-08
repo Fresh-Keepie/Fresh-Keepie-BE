@@ -1,14 +1,12 @@
 package com.masoongsoong.FreashKeepie.domain.Scrap;
 
-import com.masoongsoong.FreashKeepie.domain.member.User;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import com.masoongsoong.FreashKeepie.domain.Post.Post;
-import com.masoongsoong.FreashKeepie.domain.member.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.util.Lazy;
 
 import static jakarta.persistence.FetchType.*;
 

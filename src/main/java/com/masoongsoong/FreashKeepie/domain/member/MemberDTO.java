@@ -1,5 +1,6 @@
 package com.masoongsoong.FreashKeepie.domain.member;
 
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

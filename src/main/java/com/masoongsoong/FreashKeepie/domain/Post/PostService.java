@@ -1,10 +1,8 @@
 package com.masoongsoong.FreashKeepie.domain.Post;
 
-import com.masoongsoong.FreashKeepie.domain.Comment.CommentCreateRequest;
 import com.masoongsoong.FreashKeepie.domain.Like.LikeService;
 import com.masoongsoong.FreashKeepie.domain.Scrap.ScrapService;
-import com.masoongsoong.FreashKeepie.domain.member.User;
-import com.masoongsoong.FreashKeepie.domain.Scrap.Scrap;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import com.masoongsoong.FreashKeepie.domain.Scrap.ScrapRepository;
 import com.masoongsoong.FreashKeepie.domain.member.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,11 +15,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.swing.text.html.Option;
-import java.io.IOException;
-import java.nio.file.NoSuchFileException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 

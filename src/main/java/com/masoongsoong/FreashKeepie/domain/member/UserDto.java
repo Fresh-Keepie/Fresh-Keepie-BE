@@ -1,9 +1,7 @@
 package com.masoongsoong.FreashKeepie.domain.member;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.masoongsoong.FreashKeepie.domain.member.User;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import com.masoongsoong.FreashKeepie.domain.member.model.UserRole;
-import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.util.List;

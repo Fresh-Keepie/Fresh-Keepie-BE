@@ -1,19 +1,21 @@
 package com.masoongsoong.FreashKeepie.domain.member.model;
 
-import com.masoongsoong.FreashKeepie.domain.product.model.Fridge;
+import com.masoongsoong.FreashKeepie.domain.Comment.Comment;
+import com.masoongsoong.FreashKeepie.domain.Like.Like;
+import com.masoongsoong.FreashKeepie.domain.Post.Post;
+import com.masoongsoong.FreashKeepie.domain.Scrap.Scrap;
+import com.masoongsoong.FreashKeepie.domain.member.model.UserRole;
 import jakarta.persistence.*;
-
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import com.masoongsoong.FreashKeepie.domain.product.model.Fridge;
+
 import java.util.Set;
 
 
@@ -27,7 +29,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(unique = true)
     private String userId;
@@ -44,18 +46,16 @@ public class User implements UserDetails {
     @Column
     private String email;
 
-
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
     private List<UserRole> roles;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Fridge> fridges;
 
 
-
     public User(int userId) {
     }
-
-
 
 
     @Builder
@@ -78,7 +78,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return null;
+        return userId;
     }
 
     @Override
@@ -98,7 +98,28 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
+    }
+
+    // 유저가 쓴 게시글
+    @OneToMany(mappedBy ="user", orphanRemoval = true, cascade=CascadeType.MERGE) //orphanRemoval=ture는 부모가 삭제되면 자식도 삭제시킴
+    private List<Post> post =new ArrayList<>();
+
+    // 유저가 누른 스크랩
+    @OneToMany(mappedBy = "user", orphanRemoval = true, cascade=CascadeType.MERGE)
+    private List<Scrap> scraps=new ArrayList<>();
+
+    // 유저가 쓴 댓글
+    @OneToMany(mappedBy = "user", orphanRemoval = true, cascade=CascadeType.MERGE)
+    private List<Comment> comments =new ArrayList<>();
+
+    // 유저가 누른 좋아요
+    @OneToMany(mappedBy = "user", orphanRemoval = true, cascade=CascadeType.MERGE)
+    private List<Like> likes =new ArrayList<>();
+
+    public void edit(String newPassword, String newNickname){
+        this.password=newPassword;
+        this.nickname=newNickname;
     }
 
 }

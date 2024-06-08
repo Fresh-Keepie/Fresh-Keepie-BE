@@ -1,5 +1,5 @@
 package com.masoongsoong.FreashKeepie.domain.Post;
-import com.masoongsoong.FreashKeepie.domain.member.User;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import lombok.Getter;
 
 @Getter

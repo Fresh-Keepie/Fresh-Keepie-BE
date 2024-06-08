@@ -1,6 +1,6 @@
 package com.masoongsoong.FreashKeepie.domain.Scrap;
 
-import com.masoongsoong.FreashKeepie.domain.member.User;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

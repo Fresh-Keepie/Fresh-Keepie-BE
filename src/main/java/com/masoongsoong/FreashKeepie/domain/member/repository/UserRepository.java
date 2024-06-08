@@ -1,7 +1,7 @@
 package com.masoongsoong.FreashKeepie.domain.member.repository;
 
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 
-import com.masoongsoong.FreashKeepie.domain.member.User;
 import jakarta.persistence.Id;
 import com.masoongsoong.FreashKeepie.domain.member.model.MemberType;
 import com.masoongsoong.FreashKeepie.domain.member.model.User;

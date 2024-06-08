@@ -1,6 +1,6 @@
 package com.masoongsoong.FreashKeepie.domain.Comment;
 
-import com.masoongsoong.FreashKeepie.domain.member.User;
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import com.masoongsoong.FreashKeepie.domain.member.repository.UserRepository;
 import com.masoongsoong.FreashKeepie.domain.Post.Post;
 import com.masoongsoong.FreashKeepie.domain.Post.PostRepository;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

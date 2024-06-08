@@ -16,30 +16,53 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-	//새로 추가
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
+	implementation 'mysql:mysql-connector-java:8.0.33'
 	runtimeOnly 'com.mysql:mysql-connector-j'
-	annotationProcessor 'org.projectlombok:lombok'
-	implementation 'org.springframework.boot:spring-boot-starter-validation' //데이터 유효성 검증. @Validated 를 통해 검증 가능
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' //JPA 기능
 
-	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
-	//spring security
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	testImplementation 'org.springframework.security:spring-security-test'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+	implementation 'javax.annotation:javax.annotation-api:1.3.2'
+
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
 
 	// Swagger
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.1.0.M1'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+	
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	// https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+//	implementation 'org.apache.kafka:kafka-clients:3.0.0'
+
+
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+	implementation 'org.springframework.kafka:spring-kafka'
+
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	implementation 'javax.xml.bind:jaxb-api:2.3.1'
+
 }
+
 
 tasks.named('bootBuildImage') {
 	builder = 'paketobuildpacks/builder-jammy-base:latest'

@@ -1,5 +1,6 @@
 package com.masoongsoong.FreashKeepie.domain.member.model;
 
+<<<<<<< HEAD
 import com.masoongsoong.FreashKeepie.domain.Comment.Comment;
 import com.masoongsoong.FreashKeepie.domain.Like.Like;
 import com.masoongsoong.FreashKeepie.domain.Post.Post;
@@ -14,6 +15,23 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+=======
+import com.masoongsoong.FreashKeepie.domain.product.model.Fridge;
+import jakarta.persistence.*;
+
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+>>>>>>> 950559fe53b06144550e26fe75beecfc29520123
 
 
 @Getter
@@ -26,7 +44,11 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
     private Long id;
+=======
+    private int id;
+>>>>>>> 950559fe53b06144550e26fe75beecfc29520123
 
     @Column(unique = true)
     private String userId;
@@ -44,17 +66,27 @@ public class User implements UserDetails {
     private String email;
 
 
+<<<<<<< HEAD
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     private List<UserRole> roles;
 
     // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     // private Set<Fridge> fridges;
+=======
+    private List<UserRole> roles;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Fridge> fridges;
+>>>>>>> 950559fe53b06144550e26fe75beecfc29520123
 
 
 
     public User(int userId) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 950559fe53b06144550e26fe75beecfc29520123
     }
 
 
@@ -80,26 +112,43 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
+<<<<<<< HEAD
         return userId;
+=======
+        return null;
+>>>>>>> 950559fe53b06144550e26fe75beecfc29520123
     }
 
     @Override
     public boolean isAccountNonExpired() {
+<<<<<<< HEAD
         return true;
+=======
+        return false;
+>>>>>>> 950559fe53b06144550e26fe75beecfc29520123
     }
 
     @Override
     public boolean isAccountNonLocked() {
+<<<<<<< HEAD
         return true;
+=======
+        return false;
+>>>>>>> 950559fe53b06144550e26fe75beecfc29520123
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
+<<<<<<< HEAD
         return true;
+=======
+        return false;
+>>>>>>> 950559fe53b06144550e26fe75beecfc29520123
     }
 
     @Override
     public boolean isEnabled() {
+<<<<<<< HEAD
         return true;
     }
 
@@ -122,6 +171,9 @@ public class User implements UserDetails {
     public void edit(String newPassword, String newNickname){
         this.password=newPassword;
         this.nickname=newNickname;
+=======
+        return false;
+>>>>>>> 950559fe53b06144550e26fe75beecfc29520123
     }
 
 }

@@ -1,11 +1,12 @@
 package com.masoongsoong.FreashKeepie.global.error;
 
+
+import java.io.File;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.io.File;
 
 @Component
 public class InitializeRunner implements CommandLineRunner {

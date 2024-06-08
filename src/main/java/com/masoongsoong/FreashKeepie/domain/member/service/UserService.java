@@ -1,6 +1,12 @@
 package com.masoongsoong.FreashKeepie.domain.member.service;
 
+
 import com.masoongsoong.FreashKeepie.domain.member.model.User;
+
+
+
+import com.masoongsoong.FreashKeepie.domain.member.model.*;
+
 import com.masoongsoong.FreashKeepie.domain.member.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -60,4 +66,5 @@ public class UserService {
         }
         return optionalUser.get();
     }
+
 }

@@ -65,7 +65,7 @@ public class SecurityConfig{
 
 
                         .requestMatchers("/resources/**","/mypage/**", "/board/**","/user/signup", "/user/login", "/product/fridge/**", "/ingredient/create", "/product", "/fridge/**","product/list/{fridgeId}","/product/{userId}/{ingredientsId}", "/ingredient/update/{userId}/{ingredientsDetailId}").permitAll()
-                        .anyRequest().permitAll()) // 다른 모든 요청은 인증 필요
+                        .anyRequest().permitAll()) // 다른 모든 요청은 인증 필요g
                 .csrf((csrf) -> csrf
                         .ignoringRequestMatchers("/h2-console/**", "/user/signup", "/user/login", "/product/**", "/product/fridge", "/ingredient/create","/product",  "/fridge/list","/product/list","product/list/{fridgeId}","/product/{userId}/{ingredientsId}", "/update/{userId}/{ingredientsDetailId}", "/ingredient/update/{userId}/{ingredientsDetailId}")) // /h2-console 경로에 대해 CSRF 보호 비활성화
 

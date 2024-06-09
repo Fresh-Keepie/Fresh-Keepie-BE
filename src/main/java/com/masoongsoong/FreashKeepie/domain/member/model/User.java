@@ -54,10 +54,6 @@ public class User implements UserDetails {
     private Set<Fridge> fridges;
 
 
-    public User(int userId) {
-    }
-
-
     @Builder
     private User(String userId, String password, String nickname, String birth, String email) {
         this.userId = userId;

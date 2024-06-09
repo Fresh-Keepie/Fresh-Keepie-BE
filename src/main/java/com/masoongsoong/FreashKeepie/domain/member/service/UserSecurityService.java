@@ -1,7 +1,12 @@
 package com.masoongsoong.FreashKeepie.domain.member.service;
 
+<<<<<<< Updated upstream
 import com.masoongsoong.FreashKeepie.domain.member.model.User;
 
+=======
+
+import com.masoongsoong.FreashKeepie.domain.member.model.User;
+>>>>>>> Stashed changes
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

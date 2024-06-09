@@ -1,13 +1,11 @@
 package com.masoongsoong.FreashKeepie.domain.member.service;
 
-<<<<<<< HEAD
 import com.masoongsoong.FreashKeepie.domain.member.model.User;
-=======
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
->>>>>>> 950559fe53b06144550e26fe75beecfc29520123
 import com.masoongsoong.FreashKeepie.domain.member.model.UserRole;
 import com.masoongsoong.FreashKeepie.domain.member.model.User;
 import com.masoongsoong.FreashKeepie.domain.member.repository.UserRepository;
